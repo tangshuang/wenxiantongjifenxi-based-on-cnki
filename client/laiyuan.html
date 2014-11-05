@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>文献来源统计工具 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>文献来源统计工具</h1>
+    <p><img src="img/jiliang-laiyuan-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="quchong.html">上一步</a>中，你已经获得了Excel格式的文献元数据集，现在我们利用元数据集中的来源，对文献来源做统计，统计出文献来自哪些方面，并且每一个来源都有多少篇文章，并且利用Excel制作统计图。<p>
+    <p>打开上述的Excel文件，全选“来源”、“刊物(会议、导师)名称”那两列【注意是两列】，复制（如图）。</p>
+    <p><img src="img/jiliang-laiyuan-1.png"></p>
+    <p>复制好了吗？把复制好的内容<strong>直接</strong>黏贴到下面的文本框中。</p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/laiyuan_result.php" target="_blank">
+      <p><label><textarea name="list" id="list" class="data">例：来源	刊物(会议、导师)名称
+期刊	档案学研究
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学研究
+期刊	档案学研究
+期刊	档案学通讯
+期刊	档案学研究
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案与建设
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+硕士	谭琤培
+硕士	张照余
+硕士	刘渊
+硕士	刘家真
+硕士	范辉
+硕士	傅荣校
+硕士	姚乐野
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	档案学通讯
+期刊	情报科学
+</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      </p>
+      <input type="hidden" id="key" value="not null" />
+    </form>
+    <p>和之前你做的一样，你将得到一个经过统计好的txt文档（documents_meta_data_laiyuan.txt），直接复制txt文档中的内容到一个excel中，利用Excel来实现数据的图形化。</p>
+    <p>这里需要<strong>注意</strong>，因为把所有的来源都放在了一个Excel表格中，因此，你必须自己手动把这些来源拆分为不同的sheet，我已经把不同的来源分开了，应该很好判别。<p>
+    <p><img src="img/jiliang-laiyuan-2.png"></p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

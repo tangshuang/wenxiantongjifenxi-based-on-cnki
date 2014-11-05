@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>文献年度统计工具 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>文献年度统计工具</h1>
+    <p><img src="img/jiliang-niandu-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="quchong.html">上一步</a>中，你已经获得了Excel格式的文献元数据集，现在我们利用元数据集中的年度，对文献年度做统计，统计出每一年发表了几篇文章，并且利用Excel制作统计图。<p>
+    <p>打开上述的Excel文件，全选年度那一列，复制（如图）。</p>
+    <p><img src="img/jiliang-niandu-1.png"></p>
+    <p>复制好了吗？把复制好的内容<strong>直接</strong>黏贴到下面的文本框中。</p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/niandu_result.php" target="_blank">
+      <p><label><textarea name="years" id="list" class="data">例：年度
+2009
+2010
+2010
+2010
+2010
+2010
+2010
+2010
+2010
+2010
+2010
+2011
+2011
+2011
+2011
+2011
+2011
+</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      </p>
+      <input type="hidden" id="key" value="not null" />
+    </form>
+    <p>和之前你做的一样，你将得到一个经过统计好的txt文档（documents_meta_data_niandu.txt），直接复制txt文档中的内容到一个excel中，对年份进行排序，利用Excel来实现数据的图形化。具体如何进行excel中的年度图表统计请参考<a href="http://www.danganxue.com/forum.php?mod=viewthread&tid=2&extra=" target="_blank">这篇文章</a>。有的时候你不单单是要统计全部年度，你可以通过Excel表格对文献元数据集进行筛选（怎么筛选不多讲），把筛选后的年份列表拷贝到这里，从而获得对应的年度分布。</p>
+    <p><img src="img/jiliang-niandu-2.png"></p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

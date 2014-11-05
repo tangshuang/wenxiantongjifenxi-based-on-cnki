@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>第三步：挑选文献列表（排除无关条目） - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>第三步：挑选文献列表（排除无关条目）</h1>
+    <p><img src="img/jiliang-2-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="format.html">上一步</a>中，你已经获得了一个包含了初始数据的txt文件（如果是直接下载的话，它的名字为documents_meta_data.txt），接下来，你将使用本步骤的工具排除那些由于你没有注意而保留下来的无关条目。经过挑选之后，保留下来的文献条目将全部与你要研究的问题相关。下面按照提示进行操作吧。<p>
+    <p>打开上述的txt文件，你看到的是经过上一步处理好的条目格式（如下图），通过键盘上的“Ctrl+A”全选所有内容，“Ctrl+C”拷贝它，然后黏贴到下面的文本框中。</p>
+    <p><img src="img/jiliang-2-1.png"></p>
+    <p>复制好了吗？把复制好的内容黏贴到下面的文本框中。黏贴的时候如果你的内容极其多，很有可能出现浏览器假死的现象，所以稍微等一下（推荐使用firefox、chrome等浏览器，不推荐IE浏览器）。<strong>不要急着点提交按钮，继续往下看。</strong></p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/tiaoxuan_result.php" target="_blank">
+      <p><label title="只有文献条目的标题和摘要中包含这里的关键词，才能保留下来，如果不包含这里的关键词，那么那些条目就会被删除">A、关键词列表：<input type="text" name="keys" id="key" value="例：档案馆,数字,虚拟" class="keys" /></label></p>
+      <p>B、关键词关系：
+        <label title="只有包含上面的全部关键词的条目才会被保留下来"><input type="radio" name="relation" value="and" checked="checked" />且的关系</label> 
+        <label title="只要包含上面关键词中的一个，文献条目就可以被保留下来"><input type="radio" name="relation" value="or" />或的关系</label> 
+      </p>
+      <p><label>C、文献格式列表：<br /><textarea name="list" id="list" class="data">例：序号  题名  作者  年度  发表时间  来源  刊物(会议、导师)名称  机构  关键词  摘要  详情  下载
+1  对高校数字档案馆建设的思考  朱金凤  2006  2006-02-01  期刊  兰台世界  商丘师范学院,  高校;数字档案馆;建设;  随着信息技术的迅速发展,信息资源数字化、网络化进程的进一步加快,数字档案馆的建设与研究成为档案界关注的热点。我国已有青岛、深圳等地国家综合档案馆建立数字档案馆的成功经验,高校数字档案馆建设也是大势所趋。  http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=SHIJ200603012&DbName=CJFQ2006  http://epub.cnki.net/grid2008/docdown/docdownload.aspx?year=2006&dflag=cajdown&filename=shij200603012&dbcode=cjfq
+2  中外数字档案馆比较研究  朱健,林彦,谢清  2006  2006-02-01  期刊  兰台世界  南京大学信息管理系,南京大学信息管理系,中国电子科技集团公司第十四研究所,  中外;数字档案馆;比较;  档案馆作为重要信息部门被纳入规划之中,各国政府、大学、企业、研究机构等都致力于新型数字档案馆的研究。本文主要以美国和英国的数字档案馆为例,比较中外数字档案馆研究的差异。  http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=SHIJ200603019&DbName=CJFQ2006  http://epub.cnki.net/grid2008/docdown/docdownload.aspx?year=2006&dflag=cajdown&filename=shij200603019&dbcode=cjfq
+3  数字档案馆与数字图书馆的比较研究  潘连根  2006  2006-03-25  期刊  浙江档案  浙江绍兴文理学院,  数字档案馆;数字图书馆;比较;  本文对数字档案馆和数字图书馆的联系和区别作了较为全面的分析,认为两者之间的联系主要表现在建设目标、工作原理、采用技术上有着相似的一面;两者之间的区别主要体现在信息资源、服务、应用技术、管理方式、建设成本、社会角色定位等方面有所不同。同时,数字档案馆和数字图书馆之间还存在着一定的互补关系。  http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=ZJDA200603009&DbName=CJFQ2006  http://epub.cnki.net/grid2008/docdown/docdownload.aspx?year=2006&dflag=cajdown&filename=zjda200603009&dbcode=cjfq
+4  基于数字档案馆的档案信息用户研究  唐艳芳  2006  2006-07-18  期刊  档案学通讯  湘潭大学管理学院,  数字档案馆;档案信息用户;虚拟用户;动态管理;在线教育;  在建设数字档案馆时也应重视数字档案馆的档案信息用户研究。本文从虚拟用户、用户需求特点、动态管理、在线教育等方面对数字档案馆的档案信息用户问题进行了探讨。  http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=DAXT200604012&DbName=CJFQ2006  http://epub.cnki.net/grid2008/docdown/docdownload.aspx?year=2006&dflag=cajdown&filename=daxt200604012&dbcode=cjfq
+5  关于数字档案馆标准体系的思考  杨安莲  2006  2006-11-18  期刊  档案学通讯  中国人民解放军南京政治学院上海分院信息管理系上海市,200433  数字档案馆;档案信息化;标准;标准体系;  本文从分析数字档案馆及数字档案馆标准体系的含义出发,论述了在数字档案馆标准体系的构建过程中,应遵循系统性、先进性、现实性、兼容性和权威性原则,坚持“统筹规划、突出重点、分步实施、注重实效”的总体思路,注意处理好各种关系。在此基础上,提出了由业务标准、技术标准、管理标准和评估标准四个部分构成的数字档案馆标准体系的主要结构。  http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=DAXT200606016&DbName=CJFQ2006  http://epub.cnki.net/grid2008/docdown/docdownload.aspx?year=2006&dflag=cajdown&filename=daxt200606016&dbcode=cjfq</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      </p>
+    </form>
+    <p><strong>如何填写A项：</strong>你把鼠标放在A文本框上的时候可以看到提示，里面要填写文献标题和摘要中包含的字词，例如你可以填写“档案馆,数字,虚拟”来确保文献是和数字档案馆相关的，需要注意的是，不同的关键词之间用英文逗号“,”分隔。</p>
+    <p><strong>如何选择B项：</strong>如果你选择了且的关系，那么文献的标题或摘要中就必须包含“档案馆”“数字”“虚拟”这三个词，如果缺少其中一个，就会被排除；如果你选择了或的关系，那么文献的标题或摘要中只需要包含这三个词中的一个，就可以被保留下来，只有那些都不包含的条目才会被排除。</p>
+    <p><strong>如果填写C项：</strong>从前面说到的txt文档中全选、复制，黏贴到C处文本框即可。</p>
+    <p><strong>如果又有且又有或怎么办？</strong>例如必须包含“档案馆”和“信息”这两个词，同时只需要包含“数字”和“虚拟”这两个词中的一个就可以了。这种情况下，先使用且的关系把包含了“档案馆”和“信息”这两个词的条目挑选出来，得到一个txt文档，再把这个文档的内容全部拷贝到上面的文本框，把关键词改为“数字;虚拟”，选择或的关系，再提交即可。</p>
+    <p>勾选“直接下载txt结果”前的选项的话，点击提交后会直接提示下载一个txt文档，如果不勾选，提交后会把处理好的数据直接显示在网页中。</p>
+    <p>这里推荐勾选，因为即使你不勾选，后面也要把结果数据先拷贝到一个txt文件中。（为什么不直接下载excel文档呢？因为不同的服务器处理后文件格式不一样，excel下载以后可能出现乱码，因此使用txt比较保险。况且，我们下一步中还要使用这个txt。）</p>
+    <p>不勾选“直接下载txt”的情况下（勾选了的不必要看这一段），点击提交，会打开显示了处理结果数据的网页。再次使用“Ctrl+A => Ctrl+C”拷贝整个网页的内容。在你的电脑桌面新建一个.txt文档，打开后把拷贝的内容黏贴在里面。</p>
+    <p>如果勾选了下载txt的选项，那么会下载一个documents_meta_data.txt，里面保存了经过处理的数据。将它打开，你可以看到每行一条文献，第一列是序号。没错，<strong>这就是我们处理过后的一个标准格式，（如下图）</strong>这个txt文件我们会在下一步用到，把它放在方便的位置。</p>
+    <p><img src="img/jiliang-2-2.png"></p>
+    <p><img src="img/jiliang-2-3.png"></p>
+    <p>通过上面的这几个步骤，你就拿到了我们需要的txt文档，把这个文档保存到方便使用的位置，我们将会在下一步中使用它。</p>
+    <br>
+    <p align="center"><a href="quchong.html" class="btn btn-lg">下一步</a></p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

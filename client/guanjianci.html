@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>文献关键词（词频）统计工具 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>文献关键词（词频）统计工具</h1>
+    <p><img src="img/jiliang-guanjianci-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="quchong.html">上一步</a>中，你已经获得了Excel格式的文献元数据集，现在我们利用元数据集中的关键词，对文献关键词做统计，统计出文献关键词的词频，并且利用Excel制作统计图。<p>
+    <p>打开上述的Excel文件，全选“关键词”那一列，复制。</p>
+    <p>复制好了吗？把复制好的内容<strong>直接</strong>黏贴到下面的文本框中。</p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/guanjianci_result.php" target="_blank">
+      <p><label><textarea name="list" id="list" class="data">例：关键词
+数字档案馆,电子文件档案馆,电子文件中心
+数字档案馆,知识管理,服务
+数字档案馆,生态系统,生态因子
+知识管理,数字档案馆,数字图书馆
+IT服务集约化,集成平台,服务型数字档案馆
+OAIS,数字档案馆,功能模型
+数字档案馆,最佳实践,国外
+数字档案馆,档案管理体制
+数字档案馆,档案信息服务,对策
+数字档案馆,信息技术外包
+云计算,数字档案馆,信息资源,信息用户,信息设施
+政府信息公开,数字档案馆,电子文件
+SOA,联合数字档案馆,信息资源集成
+云计算,数字档案馆,档案馆建设
+数字档案馆,数字图书馆,布拉德福定律,普赖斯定律
+数字档案馆,信息资源
+信息生态,数字档案馆,信息服务
+数字档案馆,数字图书馆
+数字档案馆,人文关怀
+</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      </p>
+      <input type="hidden" id="key" value="not null" />
+    </form>
+    <p>和之前你做的一样，你将得到一个经过统计好的txt文档（documents_meta_data_guanjianci.txt），直接复制txt文档中的内容到一个excel中，利用Excel来实现数据的图形化。</p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

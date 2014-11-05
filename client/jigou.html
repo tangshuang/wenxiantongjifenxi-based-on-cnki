@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>文献发文机构统计工具 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>文献发文机构统计工具</h1>
+    <p><img src="img/jiliang-jigou-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="quchong.html">上一步</a>中，你已经获得了Excel格式的文献元数据集，现在我们利用元数据集中的机构，对文献发文机构做统计，统计出文献来自哪些机构，并且每一个机构都有多少篇文章，并且利用Excel制作统计图。<p>
+    <p>打开上述的Excel文件，全选“机构”那一列，复制（如图）。</p>
+    <p><img src="img/jiliang-jigou-1.png"></p>
+    <p>复制好了吗？把复制好的内容<strong>直接</strong>黏贴到下面的文本框中。</p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/jigou_result.php" target="_blank">
+      <p><label><textarea name="list" id="list" class="data">例：机构
+武汉大学信息管理学院
+西南石油大学经济管理学院,四川大学公共管理学院
+上海大学图书情报档案系
+中国人民大学信息资源管理学院,中央司法警官学院警察管理系
+中国人民大学信息资源管理学院,清华大学档案馆
+郑州航空工业管理学院
+中国人民大学信息资源管理学院
+浙江师范大学档案馆
+哈尔滨工程大学档案馆
+湘潭大学公共管理学院
+南昌大学人文学院,南昌大学教育学院
+南开大学信息资源管理系
+湘潭大学公共管理学院
+南京森林警察学院
+中国人民大学信息资源管理学院,南昌大学历史系
+湘潭大学公共管理学院
+南昌大学人文学院
+中国人民大学信息资源管理学院,河北大学管理学院
+南昌大学历史系
+上海师范大学人文与传播学院信息管理系
+武汉大学信息管理学院档案与政务信息学系
+四川大学历史文化学院
+苏州大学
+苏州大学
+浙江大学
+武汉大学
+北京交通大学
+浙江大学
+四川大学
+湘潭大学管理学院
+中国人民解放军南京政治学院上海分院信息管理系上海市,200433
+郑州航空工业管理学院郑州市,邮编450005
+南开大学商学院,南开大学商学院天津300071,天津300071
+上海师范大学人文学院档案学系邮编:200234
+浙江大学档案馆
+南开大学商学院信息资源管理系,南开大学商学院信息资源管理系天津300071,天津300071
+清华大学档案馆北京市100084
+南京大学信息管理系南京市,邮编:210093
+郑州大学信息管理系
+武汉大学信息管理学院
+四川大学公共管理学院,四川大学图书馆四川成都610064,四川成都610064
+四川大学图书馆,四川大学公共管理学院成都市邮编:610064,成都市邮编:610064
+南京政治学院上海校区信息管理系
+南京政治学院上海校区信息管理系
+</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      </p>
+      <input type="hidden" id="key" value="not null" />
+    </form>
+    <p>和之前你做的一样，你将得到一个经过统计好的txt文档（documents_meta_data_jigou.txt），直接复制txt文档中的内容到一个excel中，利用Excel来实现数据的图形化。</p>
+    <p>文献中常常出现机构不统一的情况，有的填写简称，有的只填写学校所在系，因此，凡是大学（学院）的只把该大学（学院）作为作者机构，凡是局的把该局作为机构，凡是馆的把该馆作为机构，其他则保留。很明显，机构统计存在不准确的情况，建议你经过统计后再结合人工审核进一步获得准确数据。如下图中，你就会发现经过统计后一些奇怪的机构也出现在了统计结果中，这是由于杂志社或作者在填写机构字段的时候与我们的工具不符导致的，因此我们要对这些奇怪的机构进行重查。</p>
+    <p><img src="img/jiliang-jigou-2.png"></p>
+    <p>经过重查和确认后，你可以轻松的利用excel做排序和图形化处理。</p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

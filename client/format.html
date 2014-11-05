@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>第二步：构建拥有完整信息的文献列表 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>第二步：构建拥有完整信息的文献列表</h1>
+    <p><img src="img/jiliang-1-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="doeln.html">上一步</a>中，你已经将“导出题录.eln”保存到了“D:\我的文档\E-learning\导出题录.eln”（这里只是假设位置，你可能保存到了其他地方）。现在，使用<a href="http://pan.baidu.com/s/1jGqT2Xw" target="_blank">EditPlus</a>打开这个文件（EditPlus是一个文本编辑器，功能比较强大，其实你也可以使用其他的文本编辑器打开这个eln文件，甚至可以使用windows系统自带的记事本打开，我们的目标是打开文件，看到里面的内容，不管你使用什么软件都可以）。<p>
+    <p>打开文件之后，你会看到里面的内容，数据格式为xml格式（如下面文本框中给出的示例格式一样）。现在什么都不要想，通过键盘上的“Ctrl+A”全选所有内容，“Ctrl+C”拷贝它，然后黏贴到下面的文本框中。（如下图）</p>
+    <p><img src="img/jiliang-1-1.png"></p>
+    <p><img src="img/jiliang-1-2.png"></p>
+    <p>复制好了吗？把复制好的内容黏贴到下面的文本框中。黏贴的时候如果你的内容极其多，很有可能出现浏览器假死的现象，所以稍微等一下（推荐使用firefox、chrome等浏览器，不推荐IE浏览器）。<strong>不要急着点提交按钮，继续往下看。</strong></p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/format_result.php" target="_blank">
+    <p><textarea name="list" id="list" class="data">例：&lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;CNKINOTE&gt;
+    &lt;DATA&gt;
+      &lt;Title&gt;我国数字档案馆与电子文件中心建设述评&lt;/Title&gt;
+      &lt;Author&gt;肖秋惠;&lt;/Author&gt;
+      &lt;DOI&gt;7E9E3C893722FA4CB48353FBFA20A792&lt;/DOI&gt;
+      &lt;PubTime&gt;2008-11-18&lt;/PubTime&gt;
+      &lt;Source&gt;档案学通讯&lt;/Source&gt;
+      &lt;Keyword&gt;数字档案馆;电子文件中心&lt;/Keyword&gt;
+      &lt;EKeyword&gt;数字档案馆;电子文件中心&lt;/EKeyword&gt;
+      &lt;Summary&gt;论文分析了我国数字档案馆建设过程中存在的现实问题,总结了我国数字档案馆建设的主要特点,并论述了我国电子文件中心的性质及对数字档案馆功能的重要补充。最后,得出了4条结论。&lt;/Summary&gt;
+      &lt;ESummary&gt;论文分析了我国数字档案馆建设过程中存在的现实问题,总结了我国数字档案馆建设的主要特点,并论述了我国电子文件中心的性质及对数字档案馆功能的重要补充。最后,得出了4条结论。&lt;/ESummary&gt;
+      &lt;Link&gt;http://epub.cnki.net/kns/detail/detail.aspx?FileName=DAXT200806005&amp;amp;DbName=CJFQ2008&lt;/Link&gt;
+      &lt;Year&gt;2008&lt;/Year&gt;
+      &lt;Period&gt;06&lt;/Period&gt;
+      &lt;PageCount&gt;5&lt;/PageCount&gt;
+      &lt;Page&gt;11-15&lt;/Page&gt;
+      &lt;SrcDatabase&gt;期刊&lt;/SrcDatabase&gt;
+      &lt;DataType&gt;1&lt;/DataType&gt;
+      &lt;Organ&gt;武汉大学信息管理学院;&lt;/Organ&gt;
+      &lt;Language&gt;2052&lt;/Language&gt;
+    &lt;/DATA&gt;
+  &lt;/CNKINOTE&gt;</textarea></p>
+    <p>
+      <button type="submit">提交</button>
+      <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      <input type="hidden" id="key" value="not null" />
+    <p>
+    </form>
+    <p>勾选“直接下载txt结果”前的选项的话，点击提交后会直接提示下载一个txt文档，如果不勾选，提交后会把处理好的数据直接显示在网页中。</p>
+    <p>这里推荐勾选，因为即使你不勾选，后面也要把结果数据先拷贝到一个txt文件中。（为什么不直接下载excel文档呢？因为不同的服务器处理后文件格式不一样，excel下载以后可能出现乱码，因此使用txt比较保险。况且，我们下一步中还要使用这个txt。）</p>
+    <p>不勾选“直接下载txt”的情况下（勾选了的不必要看这一段），点击提交，会打开显示了处理结果数据的网页。再次使用“Ctrl+A => Ctrl+C”拷贝整个网页的内容。在你的电脑桌面新建一个.txt文档，打开后把拷贝的内容黏贴在里面。</p>
+    <p>如果勾选了下载txt的选项，那么会下载一个documents_meta_data.txt，里面保存了经过处理的数据。将它打开，你可以看到每行一条文献，第一列是序号。没错，<strong>这就是我们处理过后的一个标准格式，（如下图）</strong>这个txt文件我们会在下一步用到，把它放在方便的位置。</p>
+    <p>打开这个txt文档，再次使用一个“Ctrl+A => Ctrl+C”拷贝整个文件的内容。在你的电脑桌面上新建Excel表格文档，打开，黏贴即可。（整个过程如下示意图）</p>
+    <p><img src="img/jiliang-1-4-1.png"></p>
+    <p><img src="img/jiliang-1-4-2.png"></p>
+    <p><img src="img/jiliang-1-4-3.png"></p>
+    <p>通过上面的这几个步骤，你就拿到了一个Excel文档，这就是原始文献数据（还需要进一步处理），必要的时候你可能使用它。在下一步中，你需要用到上述的txt文档，因此把它放在方便的位置。</p>
+    <br>
+    <p align="center"><a href="tiaoxuan.html" class="btn btn-lg">下一步</a></p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

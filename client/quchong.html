@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>第四步：文献去重 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>第四步：文献去重</h1>
+    <p><img src="img/jiliang-3-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="tiaoxuan.html">上一步</a>中，你已经获得了一个包含了经过挑选的文献条目的txt文件（如果是直接下载的话，它的名字为documents_meta_data.txt），接下来，你将使用本步骤的工具去除重复的条目（标题相同，作者相同，发表日期相同，期刊相同）。经过挑选之后，保留下来的文献条目将没有重复的，能够如实的反映研究的情况。下面按照提示进行操作吧。<p>
+    <p>打开上述的txt文件，你看到的是经过上一步处理好的条目格式（如下图），通过键盘上的“Ctrl+A”全选所有内容，“Ctrl+C”拷贝它，然后黏贴到下面的文本框中。</p>
+    <p><img src="img/jiliang-2-1.png"></p>
+    <p>复制好了吗？把复制好的内容黏贴到下面的文本框中。黏贴的时候如果你的内容极其多，很有可能出现浏览器假死的现象，所以稍微等一下（推荐使用firefox、chrome等浏览器，不推荐IE浏览器）。<strong>不要急着点提交按钮，继续往下看。</strong></p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/quchong_result.php" target="_blank">
+      <p><textarea name="list" id="list" class="data">例：序号	题名	作者	年度	发表时间	来源	刊物(会议、导师)名称	机构	关键词	摘要	详情	下载
+1	对高校数字档案馆建设的思考	朱金凤;	2006	2006-02-01	期刊	兰台世界	商丘师范学院,	高校;数字档案馆;建设;	随着信息技术的迅速发展,信息资源数字化、网络化进程的进一步加快,数字档案馆的建设与研究成为档案界关注的热点。我国已有青岛、深圳等地国家综合档案馆建立数字档案馆的成功经验,高校数字档案馆建设也是大势所趋。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=SHIJ200603012&DbName=CJFQ2006	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=shij200603012&dbcode=cjfq
+2	中外数字档案馆比较研究	朱健;林彦;谢清;	2006	2006-02-01	期刊	兰台世界	南京大学信息管理系,南京大学信息管理系,中国电子科技集团公司第十四研究所,	中外;数字档案馆;比较;	档案馆作为重要信息部门被纳入规划之中,各国政府、大学、企业、研究机构等都致力于新型数字档案馆的研究。本文主要以美国和英国的数字档案馆为例,比较中外数字档案馆研究的差异。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=SHIJ200603019&DbName=CJFQ2006	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=shij200603019&dbcode=cjfq
+3	数字档案馆与数字图书馆的比较研究	潘连根;	2006	2006-03-25	期刊	浙江档案	浙江绍兴文理学院,	数字档案馆;数字图书馆;比较;	本文对数字档案馆和数字图书馆的联系和区别作了较为全面的分析,认为两者之间的联系主要表现在建设目标、工作原理、采用技术上有着相似的一面;两者之间的区别主要体现在信息资源、服务、应用技术、管理方式、建设成本、社会角色定位等方面有所不同。同时,数字档案馆和数字图书馆之间还存在着一定的互补关系。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=ZJDA200603009&DbName=CJFQ2006	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=zjda200603009&dbcode=cjfq
+4	基于数字档案馆的档案信息用户研究	唐艳芳;	2006	2006-07-18	期刊	档案学通讯	湘潭大学管理学院,	数字档案馆;档案信息用户;虚拟用户;动态管理;在线教育;	在建设数字档案馆时也应重视数字档案馆的档案信息用户研究。本文从虚拟用户、用户需求特点、动态管理、在线教育等方面对数字档案馆的档案信息用户问题进行了探讨。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=DAXT200604012&DbName=CJFQ2006	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=daxt200604012&dbcode=cjfq
+5	关于数字档案馆标准体系的思考	杨安莲;	2006	2006-11-18	期刊	档案学通讯	中国人民解放军南京政治学院上海分院信息管理系上海市,200433	数字档案馆;档案信息化;标准;标准体系;	本文从分析数字档案馆及数字档案馆标准体系的含义出发,论述了在数字档案馆标准体系的构建过程中,应遵循系统性、先进性、现实性、兼容性和权威性原则,坚持“统筹规划、突出重点、分步实施、注重实效”的总体思路,注意处理好各种关系。在此基础上,提出了由业务标准、技术标准、管理标准和评估标准四个部分构成的数字档案馆标准体系的主要结构。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=DAXT200606016&DbName=CJFQ2006	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=daxt200606016&dbcode=cjfq
+6	基于知识管理的数字档案馆建设框架	李泽锋;	2007	2007-03-18	期刊	档案学通讯	郑州航空工业管理学院郑州市,邮编450005	知识管理;数字档案馆;构建;	本文详细分析了基于知识管理的数字档案馆的体系结构,认为数字档案馆的知识管理应该包括两方面内容,即面向档案工作人员的知识管理与面向档案用户的知识管理,并进一步对这两个方面所涉及的管理方法、技术与实现进行了较为深入的探讨,从而构建了基于知识管理的数字档案馆的建设框架。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=DAXT200702024&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=daxt200702024&dbcode=cjfq
+7	国内外数字档案馆元数据标准体系比较研究	王小丽;王芳;	2007	2007-03-15	期刊	情报科学	南开大学商学院,南开大学商学院天津300071,天津300071	数字档案馆;元数据;EAD;中国档案著录规则;	本文简述了档案馆元数据的含义、功能及类型;对于国际上几种常见的档案元数据体系,如EAD、ISAD(G)、ISSAAR(CPF)、EAC、TEI、中国档案著录规则等,就其背景、结构、应用和特点进行了分析与比较,并特别分析了我国档案著录规则与EAD的区别与联系;最后提出了建立我国数字档案馆元数据标准体系的几点建议。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=QBKX200703014&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=qbkx200703014&dbcode=cjfq
+8	构建数字档案馆核心竞争力的战略思考	彭坚;	2007	2007-05-18	期刊	档案学通讯	佛山科学技术学院综合档案室,	数字档案馆;核心竞争力;信息服务;	数字档案馆的核心竞争力是一种维持数字档案馆存在和保障其发展的独特的、外界不易掌控的能力。对于数字档案馆来说,其核心竞争力系统指的是资源、服务和制度的集合。数字档案馆核心竞争力的构建必须以数字档案信息资源建设与整合为基础,以高效率的信息服务为核心,并以合理的数字档案馆运行机制为保障来不断创新,依靠高效、多样地提供信息服务能力和手段、现代化技术创新和人力资源结构重组来体现其组织的核心价值。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=DAXT200703022&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=daxt200703022&dbcode=cjfq
+9	电子政务中的数字档案馆	连志英;	2007	2007-04-28	期刊	档案学研究	上海师范大学人文学院档案学系邮编:200234	电子政务;数字档案馆;	本文主要分析了数字档案馆与电子政务之间的密切关系,指出数字档案馆建设应与电子政务相结合,应融入电子政务建设中,并提出适应电子政务发展的我国数字档案馆建设的几点策略。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=DAXY200702017&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=daxy200702017&dbcode=cjfq
+10	浅析OAIS与数字档案馆元数据建设	冯湘君;	2007	2007-04-25	期刊	山西档案	中国人民大学信息资源管理学院北京100872	OAIS;数字档案馆;元数据;	本文首先从OAIS参考模型入手,在详细介绍其信息模型与功能模型的基础上,与数字档案馆的基本功能进行比较,得出基本一致的结论。接着,以OAIS参考模型为参照,建立起一套具有多功能、个性化和通用性的数字档案馆元数据集合。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=SXDA200702007&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=sxda200702007&dbcode=cjfq
+11	数字档案馆个性化服务必然性分析	耿志杰;黄世喆;	2007	2007-03-20	期刊	云南档案	广西民族大学管理学院,广西民族大学管理学院,	数字档案馆;个性化服务;必然性;	数字档案馆信息资源不能被有效利用,其落后的服务方式是一个重要因素,个性化服务的发展为解决这一问题提供了有效途径,本文主要分析了数字档案馆推行个性化服务的必然性。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=YNDA200703030&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=ynda200703030&dbcode=cjfq
+12	基于OAIS的数字档案馆系统框架研究	金更达;	2007	2007-04-25	期刊	浙江档案	浙江大学档案馆,	数字档案馆;OAIS;系统框架;数字信息长期保存;	致力于数字信息长期保存和利用的OAIS参照模型为数字档案馆系统建设提供了理论依据。本文首先简要介绍OAIS的基本内容,然后提出了基于OAIS的数字档案馆系统框架模型,进而探讨了该框架模型的组成部分和核心策略。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=ZJDA200704020&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=zjda200704020&dbcode=cjfq
+13	基于OAI协议的数字档案馆元数据互操作问题研究	王芳;王小丽;	2007	2007-03-25	期刊	现代图书情报技术	南开大学商学院信息资源管理系,南开大学商学院信息资源管理系天津300071,天津300071	OAI-PMH;EAD;数字档案馆;互操作;	提出基于OAI-PMH协议的数字档案馆互操作的框架及功能,分析数字档案元数据EAD的结构及其与DC的映射,讨论EAD记录向OAI转换的技术原理,尤其是关于转换后保持记录上下文关系的原理,针对转换过程中存在的问题与困难提出几点解决办法。	http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&FileName=XDTQ200703005&DbName=CJFQ2007	http://epub.cnki.net/grid2008/docdown/docdownload.aspx?dflag=cajdown&filename=xdtq200703005&dbcode=cjfq</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+        <input type="hidden" id="key" value="not null" />
+      </p>
+    </form>
+    <p>勾选“直接下载txt结果”前的选项的话，点击提交后会直接提示下载一个txt文档，如果不勾选，提交后会把处理好的数据直接显示在网页中。</p>
+    <p>这里推荐勾选，因为即使你不勾选，后面也要把结果数据先拷贝到一个txt文件中。（为什么不直接下载excel文档呢？因为不同的服务器处理后文件格式不一样，excel下载以后可能出现乱码，因此使用txt比较保险。况且，我们下一步中还要使用这个txt。）</p>
+    <p>不勾选“直接下载txt”的情况下（勾选了的不必要看这一段），点击提交，会打开显示了处理结果数据的网页。再次使用“Ctrl+A => Ctrl+C”拷贝整个网页的内容。在你的电脑桌面新建一个.txt文档，打开后把拷贝的内容黏贴在里面。</p>
+    <p>如果勾选了下载txt的选项，那么会下载一个documents_meta_data.txt，里面保存了经过处理的数据。将它打开，你可以看到每行一条文献，第一列是序号。没错，<strong>这就是我们处理过后的一个标准格式，（如下图）</strong>这个txt文件我们会在下一步用到，把它放在方便的位置。接下来，我们需要把它拷贝黏贴到Excel表格中。打开这个txt，Ctrl+A全选，Ctrl+C复制，新建一个excel表格，打开，Ctrl+V黏贴，这样就获得了我们最终需要的Excel表格。</p>
+    <p><img src="img/jiliang-2-2.png"></p>
+    <p><img src="img/jiliang-2-3.png"></p>
+    <p><img src="img/jiliang-1-4-3.png"></p>
+    <p>通过上面的这几个步骤，你就拿到了我们需要的txt文档。<strong>注意：</strong>这个txt文档和excel表格文档是我们接下来进行分析的数据依据，请将它们存放在比较合适的位置。这就包含了我们的<strong>文献元数据集</strong>，请妥善保管它。</p>
+    <h2 align="center">接下来你可以做</h2>
+    <br>
+    <p align="center">
+      <a href="niandu.html" target="_blank" class="btn btn-lg">年度统计</a>
+      <a href="laiyuan.html" target="_blank" class="btn btn-lg">来源统计</a>
+      <a href="jigou.html" target="_blank" class="btn btn-lg">机构统计</a>
+      <a href="zuozhe.html" target="_blank" class="btn btn-lg">作者统计</a>
+      <br><br><br><br>
+      <a href="guanjianci.html" target="_blank" class="btn btn-lg">关键词统计</a>
+      <a href="juzhen.html" target="_blank" class="btn btn-lg">关键词共现</a>
+    </p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

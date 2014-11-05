@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>文献作者统计工具 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>文献作者统计工具</h1>
+    <p><img src="img/jiliang-zuozhe-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="quchong.html">上一步</a>中，你已经获得了Excel格式的文献元数据集，现在我们利用元数据集中的作者，对文献作者做统计，统计出文献来自哪些作者，并且每一个作者都发了多少篇文章，并且利用Excel制作统计图。<p>
+    <p>打开上述的Excel文件，全选“作者”一列，复制（如图）。</p>
+    <p><img src="img/jiliang-zuozhe-1.png"></p>
+    <p>复制好了吗？把复制好的内容<strong>直接</strong>黏贴到下面的文本框中。</p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/zuozhe_result.php" target="_blank">
+      <p><label><textarea name="list" id="list" class="data">例：作者
+肖秋会;杨青
+杨力;姚乐野
+金波;汤黎华;何伟祺
+蔡娜;袁田
+薛四新;张利
+李泽锋
+张宁
+蒋国勇
+冯晓莉
+肖文建;胡敏捷
+彭小芹;程结晶
+王芳;周平平
+易菲;龙朝阳
+文杰
+周林兴;杨桂明
+唐艳芳;温献英
+张东华;姚红叶
+李颖
+苏君华
+吕元智
+赵生辉
+罗宝勇
+许立莺
+毕建新
+吴光伟
+宋艳萍
+杨晶
+解俞
+</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      </p>
+      <input type="hidden" id="key" value="not null" />
+    </form>
+    <p>和之前你做的一样，你将得到一个经过统计好的txt文档（documents_meta_data_laiyuan.txt），直接复制txt文档中的内容到一个excel中，你可以在Excel中实现排序和筛选，利用Excel来实现数据的图形化。</p>
+    <p><strong>注意，</strong>和来源统计一样，作者统计的结果中包含了第一作者的统计和所有作者的统计，它们被放在了同一个统计结果中，你需要自己手工把这两个部分分开处理。（如下图）</p>
+    <p><img src="img/jiliang-zuozhe-2.png"></p>
+    <p>您可以使用本实验室提供的工具搭配起来，来研究作者的共现关系，先利用<a href="tiaoxuan.html">挑选工具</a>把不含“;”分号的条目先排除，这样就排除了只有一个作者的文章。接着使用作者统计工具，把所有作者统计出来，只需要作者列表，不需要作者的篇数。最后利用<a href="guanjianci.html">关键词共现矩阵构建工具</a>实现共现矩阵的构建。具体的操作方法，请阅读<a href="http://www.danganxue.com/forum.php?mod=viewthread&tid=3&extra=" target="_blank">这篇文章</a>。</p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>

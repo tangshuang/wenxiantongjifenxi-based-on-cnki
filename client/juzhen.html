@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>文献关键词矩阵构建工具 - 档案学实验室</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>文献关键词矩阵构建工具</h1>
+    <p><img src="img/jiliang-juzhen-0.png"></p>
+    <hr style="background:#f1f1f1;height:3px;border:0;margin: 30px 0;">
+    <p>在<a href="guanjianci.html">关键词统计</a>中，你已经获得了Excel格式的关键词列表，现在我们利用已经处理好的关键词进行排序和处理，最终获得关键词的共现关系，再利用ucnet对矩阵进行可视化，获得关键词共现关系图。<p>
+    <p>打开上述的Excel文件，对关键词按照频次进行降序排序（如图）。</p>
+    <p><img src="img/jiliang-juzhen-1.png"></p>
+    <p>一般来说，我们按照10%-20%的比例，挑选频次最高的关键词做共现分析。在表格中把这些高频词<strong>直接</strong>拷贝到一个txt文档中，（记住这些词的最小频次，例如你挑选的词是频次>=20的）使用替换功能，把它们处理成一行用“;”分隔的词组。（如图）</p>
+    <p><img src="img/jiliang-juzhen-2.png"></p>
+    <p><img src="img/jiliang-juzhen-3.png"></p>
+    <p><img src="img/jiliang-juzhen-4.png"></p>
+    <p>将上面这一行用“;”分隔的关键词组黏贴到下面的A文本框中。</p>
+    <p>重新打开上述Excel表格，直接拷贝“关键词”一列，黏贴到下面的B文本框中。</p>
+    <form method="post" id="send" autocomplete="off" action="http://danganxue.aliapp.com/wenxian/juzhen_result.php" target="_blank">
+      <p><label>A、分析对象关键词列表：<input type="text" name="usefulkeywords" id="key" class="keys" value="例：数字档案馆,电子文件档案馆,电子文件中心,知识管理" /></label></p>
+      <p><label>B、文献关键词字段列表：<br /><textarea name="allkeywords" id="list" class="data">例：关键词
+数字档案馆,电子文件档案馆,电子文件中心
+数字档案馆,知识管理,服务
+数字档案馆,生态系统,生态因子
+知识管理,数字档案馆,数字图书馆
+IT服务集约化,集成平台,服务型数字档案馆
+OAIS,数字档案馆,功能模型
+数字档案馆,最佳实践,国外
+数字档案馆,档案管理体制
+数字档案馆,档案信息服务,对策
+数字档案馆,信息技术外包
+云计算,数字档案馆,信息资源,信息用户,信息设施
+政府信息公开,数字档案馆,电子文件
+SOA,联合数字档案馆,信息资源集成
+云计算,数字档案馆,档案馆建设
+数字档案馆,数字图书馆,布拉德福定律,普赖斯定律
+数字档案馆,信息资源
+信息生态,数字档案馆,信息服务
+数字档案馆,数字图书馆
+</textarea></label></p>
+      <p>
+        <button type="submit">提交</button>
+        <label><input type="checkbox" name="download" value="1" checked="checked" style="width:16px;" />直接下载txt结果</label>
+      </p>
+      <input type="hidden" id="key" value="not null" />
+    </form>
+    <p>和之前你做的一样，你将得到一个经过统计好的txt文档（documents_meta_data_juzhen.txt），直接复制txt文档中的内容到一个excel中，利用ucnet来实现共现数据的图形化。</p>
+    <p><img src="img/jiliang-juzhen-5.png"></p>
+    <p><strong>技巧：</strong>其实本工具不仅可以用来做文献关键词的共现矩阵，任何矩阵都可以用来尝试，例如作者的共现，只要在填写上面的AB两项时，按照这种格式来填写就可以了。</p>
+  </article>
+  <div style="text-align:center;padding:10px 0;">&copy; <a href="http://www.danganxue.com">档案学实验室</a> - <a href="https://github.com/tangshuang/wenxiantongjifenxi-based-on-cnki">参与</a></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jiliang.js"></script>
+</body>
+</html>
