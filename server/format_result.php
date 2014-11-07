@@ -18,7 +18,7 @@ if(
   $list = trim($_POST['list']);
   $number = 1;
   
-  $xmlString = preg_replace("/\s\s|\r|\n|\r\n/",'',$list);//去除所有空格，不能去除单个空格，因为有些人用空格作为分隔符
+  $xmlString = preg_replace("/\s\s|\r|\n|\r\n|\t/",'',$list);//去除所有空格，不能去除单个空格，因为有些人用空格作为分隔符
   $xmlString = str_replace('<?xmlversion="1.0"?>','',$xmlString);
   $xmlString = str_replace('<?xmlversion="1.0"encoding="UTF-8"?>','',$xmlString);
 
@@ -42,50 +42,41 @@ if(
   // 打印记录
   foreach($documents as $num => $doc){
     // 准备变量
-    $doc_title = $doc['Title'] ? $doc['Title'] : '-';
-    $doc_year = $doc['Year'] ? $doc['Year'] : '-';
-    $doc_pub = $doc['PubTime'] ? $doc['PubTime'] : '-';
-    $doc_db = $doc['SrcDatabase'] ? $doc['SrcDatabase'] : '-';
-    $doc_period = $doc['Period'] ? ',('.$doc['Period'].')' : '';
+    $doc_title = $doc['Title'] ? $doc['Title'] : '';
+    $doc_year = $doc['Year'] ? $doc['Year'] : '';
+    $doc_pub = $doc['PubTime'] ? $doc['PubTime'] : '';
+    $doc_db = $doc['SrcDatabase'] ? $doc['SrcDatabase'] : '';
+    $doc_period = $doc['Period'] ? '('.$doc['Period'].')' : '';
     $doc_page = $doc['Page'] ? ':'.$doc['Page'] : '';
     // 对作者列表进行处理，作者用,分开
-    $doc_author = $doc['Author'] ? $doc['Author'] : '-';
-    $doc_author = str_replace('；',',',$doc_author);
-    $doc_author = str_replace('，',',',$doc_author);
-    $doc_author = str_replace(';',',',$doc_author);
-    //$doc_author = str_replace("\s",';',$doc_author);
-    //$doc_author = str_replace("\t",';',$doc_author);
-    $doc_author = preg_replace("/\s|　|\t/",',',$doc_author);
+    $doc_author = $doc['Author'] ? $doc['Author'] : '';
+    $doc_author = preg_replace("/;|；|，|\s|　|\t/",',',$doc_author);
     $doc_author = array_unique(array_filter(explode(',',$doc_author)));
     $doc_author = implode(',',$doc_author);
-    // 刊物：期刊、会议、导师等，把参考文献也弄出来
-    if($doc['DataType'] == 1){ // 期刊
-      $doc_src = $doc['Source'] ? $doc['Source'] : '-';
-      $doc_index = "{$doc_author}.{$doc_title}[J].{$doc_src},{$doc_year}{$doc_period}{$doc_page}.";
-    }elseif($doc['DataType'] == 2){ // 硕博
-      $doc_src = $doc['Teacher'] ? $doc['Teacher'] : '-';
-      $doc_index = "{$doc_author}.{$doc_title}[D].{$doc_src},{$doc_year}.";
-    }elseif($doc['DataType'] == 3){ // 会议
-      $doc_src = $doc['Meeting'].'-'.$doc['City'];
-    }elseif($doc['DataType'] == 4){ // 报纸
-      $doc_src = $doc['Source'] ? $doc['Source'] : '-';
-    }else{
-      $doc_src = $doc['Source'] ? $doc['Source'] : '-';
-    }
     // 机构处理
     $doc_organ = $doc['Organ'];
-    $doc_organ = str_replace(';',',',$doc_organ);
-    $doc_organ = str_replace('；',',',$doc_organ);
-    $doc_organ = str_replace('，',',',$doc_organ);
-    $doc_organ = preg_replace("/\s|　|\t/",',',$doc_organ);
+    $doc_organ = preg_replace("/;|；|，|\s|　|\t/",',',$doc_organ);
     $doc_organ = array_unique(array_filter(explode(',',$doc_organ)));
     $doc_organ = implode(',',$doc_organ);
+    // 刊物：期刊、会议、导师等，把参考文献也弄出来
+    if($doc['DataType'] == 1){ // 期刊
+      $doc_src = $doc['Source'] ? $doc['Source'] : '';
+      $doc_src = preg_replace("/;|；|，|\s|　|\t/",',',$doc_src);
+      $doc_index = "{$doc_author}.{$doc_title}[J].{$doc_src},{$doc_year}{$doc_period}{$doc_page}.";
+    }elseif($doc['DataType'] == 2){ // 硕博
+      $doc_src = $doc['Teacher'] ? $doc['Teacher'] : '';
+      $doc_src = preg_replace("/;|；|，|\s|　|\t/",',',$doc_src);
+      $doc_index = "{$doc_author}.{$doc_title}[D].{$doc_organ},{$doc_year}.";
+    }elseif($doc['DataType'] == 3){ // 会议
+      $doc_src = $doc['Meeting'].''.$doc['City'];
+    }elseif($doc['DataType'] == 4){ // 报纸
+      $doc_src = $doc['Source'] ? $doc['Source'] : '';
+    }else{
+      $doc_src = $doc['Source'] ? $doc['Source'] : '';
+    }
     // 关键词列表
     $keywords = $doc['Keyword'];
-    $keywords = str_replace(';',',',$keywords);
-    $keywords = str_replace('；',',',$keywords);
-    $keywords = str_replace('，',',',$keywords);
-    $keywords = preg_replace("/\s|　|\t/",',',$keywords);
+    $keywords = $doc_src = preg_replace("/;|；|，|\s|　|\t/",',',$keywords);
     $keywords = array_unique(array_filter(explode(',',$keywords)));
     $doc_keywords = '';
     foreach($keywords as $keyword){
@@ -99,7 +90,8 @@ if(
     if(substr($doc_keywords,-1) == ',') {
       $doc_keywords = substr($doc_keywords,0,-1);
     }
-    $doc_excerpt = $doc['Summary'] ? $doc['Summary'] : '-';
+    $doc_excerpt = $doc['Summary'] ? $doc['Summary'] : '';
+    $doc_excerpt = preg_replace("/\s|　|\r|\n|\r\n|\t/",'',$doc_excerpt);
     // 下面对全文信息链接和下载链接进行处理
     $doc_query = str_replace('http://epub.cnki.net/kns/detail/detail.aspx?','',$doc['Link']);
     $doc_link = 'http://elib.cnki.net/grid2008/brief/detailj.aspx?app=CNKI%20E-Learning&'.$doc_query;
