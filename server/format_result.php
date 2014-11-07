@@ -69,10 +69,15 @@ if(
       $doc_index = "{$doc_author}.{$doc_title}[D].{$doc_organ},{$doc_year}.";
     }elseif($doc['DataType'] == 3){ // 会议
       $doc_src = $doc['Meeting'].''.$doc['City'];
+      $doc_src = preg_replace("/;|；|，|\s|　|\t/",',',$doc_src);
+      $doc_index = '';
     }elseif($doc['DataType'] == 4){ // 报纸
       $doc_src = $doc['Source'] ? $doc['Source'] : '';
+      $doc_src = preg_replace("/;|；|，|\s|　|\t/",',',$doc_src);
+      $doc_index = '';
     }else{
       $doc_src = $doc['Source'] ? $doc['Source'] : '';
+      $doc_index = '';
     }
     // 关键词列表
     $keywords = $doc['Keyword'];
